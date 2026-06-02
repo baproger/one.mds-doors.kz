@@ -51,3 +51,5 @@ jobs:
             **/tests/**
             **/vendor/**
             **/public/hot
+            **/public/storage
+            **/public/storage/**
