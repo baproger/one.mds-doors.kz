@@ -1,11 +1,14 @@
 <IfModule mod_rewrite.c>
-    Options +FollowSymLinks +SymLinksIfOwnerMatch
-
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
     </IfModule>
 
     RewriteEngine On
+
+    # Serve storage files directly from storage/app/public
+    RewriteCond %{REQUEST_URI} ^/storage/(.*)$
+    RewriteCond %{DOCUMENT_ROOT}/../storage/app/public/%1 -f
+    RewriteRule ^storage/(.*)$ ../storage/app/public/$1 [L]
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
