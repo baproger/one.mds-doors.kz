@@ -53,3 +53,4 @@ jobs:
             **/public/hot
             **/public/storage
             **/public/storage/**
+            **/bootstrap/cache/*.php
