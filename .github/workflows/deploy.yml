@@ -50,3 +50,4 @@ jobs:
             **/.env
             **/tests/**
             **/vendor/**
+            **/public/hot
